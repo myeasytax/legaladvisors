@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Advisors - Find Your Trusted Attorney</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: #f4f4f4;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .search-form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .search-form input, .search-form select, .search-form button {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .search-form button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .search-form button:hover {
+            background-color: #005599;
+        }
+        .attorney-listing {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .attorney-listing h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #003366;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin: 0 0 10px;
+            color: #003366;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .card button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background-color: #005599;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Legal Advisors</h1>
+        <nav>
+            <a href="#search">Search Attorneys</a>
+            <a href="#membership">Join as Attorney</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Find the Right Attorney for Your Legal Needs</h2>
+        <p>Search by location, legal expertise, and more to connect with trusted attorneys.</p>
+        <form class="search-form">
+            <input type="text" placeholder="Enter Zip Code" name="zip" required>
+            <input type="text" placeholder="Legal Expertise" name="expertise">
+            <select name="practice-area">
+                <option value="">Select Practice Area</option>
+                <option value="family">Family Law</option>
+                <option value="immigration">Immigration</option>
+                <option value="criminal">Criminal Defense</option>
+                <option value="injury">Personal Injury</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <!-- Attorney Listing Section -->
+    <section id="search" class="attorney-listing">
+        <h2>Top Attorneys Near You</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>John Doe</h3>
+                <p><strong>Practice:</strong> Family Law</p>
+                <p><strong>Location:</strong> New York, NY</p>
+                <button>View Profile</button>
+            </div>
+            <div class="card">
+                <h3>Jane Smith</h3>
+                <p><strong>Practice:</strong> Immigration Law</p>
+                <p><strong>Location:</strong> Los Angeles, CA</p>
+                <button>View Profile</button>
+            </div>
+            <div class="card">
+                <h3>Michael Johnson</h3>
+                <p><strong>Practice:</strong> Criminal Defense</p>
+                <p><strong>Location:</strong> Chicago, IL</p>
+                <button>View Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Legal Advisors. All Rights Reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('search-form').addEventListener('submit', async function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const query = document.getElementById('search-query').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/api/search?query=${encodeURIComponent(query)}`);
+                const results = await response.json();
+
+                const resultsContainer = document.getElementById('search-results');
+                resultsContainer.innerHTML = ''; // Clear previous results
+
+                if (results.length > 0) {
+                    results.forEach(lawyer => {
+                        resultsContainer.innerHTML += `
+                            <div class="lawyer-card">
+                                <h3>${lawyer.name}</h3>
+                                <p><strong>Expertise:</strong> ${lawyer.expertise.join(', ')}</p>
+                                <p><strong>Location:</strong> ${lawyer.location}</p>
+                                <p><strong>Credentials:</strong> ${lawyer.professional_credentials || 'N/A'}</p>
+                                <p><strong>Professional Memberships:</strong> ${lawyer.professional_memberships || 'N/A'}</p>
+                                <p><strong>Bar Memberships:</strong> ${lawyer.bar_memberships || 'N/A'}</p>
+                                <a href="${lawyer.website}" target="_blank">View Profile</a>
+                            </div>
+                        `;
+                    });
+                } else {
+                    resultsContainer.innerHTML = '<p>No lawyers found for your search query.</p>';
+                }
+            } catch (error) {
+                alert('An error occurred while fetching search results. Please try again.');
+                console.error(error);
+            }
+        });
+    </script>
+</body>
+</html>
