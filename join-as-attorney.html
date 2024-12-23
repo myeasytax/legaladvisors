@@ -1,0 +1,278 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Legal Advisors as an Attorney</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: #003366;
+        }
+        .benefits {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .benefits h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        .benefits p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .membership-details {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .membership-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .membership-box h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+        .membership-box p, .membership-box ul {
+            margin: 5px 0;
+            color: #555;
+        }
+        .membership-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .membership-box ul li {
+            margin-bottom: 5px;
+        }
+        .membership-box button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .membership-box button:hover {
+            background-color: #005599;
+        }
+        .form-section {
+            padding: 40px 20px;
+            text-align: center;
+            display: none;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, select, textarea, button {
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .terms {
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .terms input {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005599;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function selectMembership(level) {
+            document.getElementById('selected-plan').value = level;
+            document.querySelector('.form-section').style.display = 'block';
+            window.scrollTo({ top: document.querySelector('.form-section').offsetTop, behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Legal Advisors</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Join as Attorney</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Grow Your Practice with Legal Advisors</h2>
+        <p>Join our platform to connect with clients who need your expertise.</p>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h2>Why Join Legal Advisors?</h2>
+        <p>✔ Expand your reach and connect with clients actively seeking legal services.</p>
+        <p>✔ Increase visibility with optimized profiles and featured placements.</p>
+        <p>✔ Manage inquiries efficiently and convert leads into loyal clients.</p>
+        <p>✔ Gain an edge with priority search rankings and enhanced exposure.</p>
+        <p>✔ Choose a membership level that aligns with your goals and practice size.</p>
+    </section>
+
+    <!-- Membership Details -->
+    <section class="membership-details">
+        <div class="membership-box">
+            <h3>Bronze - $29/month</h3>
+            <p>Perfect for new attorneys starting out.</p>
+            <ul>
+                <li>Basic Profile Listing</li>
+                <li>Limited Client Inquiries</li>
+                <li>Email Support</li>
+            </ul>
+            <button onclick="selectMembership('Bronze - $29/month')">Select Bronze</button>
+        </div>
+        <div class="membership-box">
+            <h3>Silver - $59/month</h3>
+            <p>Grow your visibility and expand your reach.</p>
+            <ul>
+                <li>Enhanced Profile Listing</li>
+                <li>Unlimited Client Inquiries</li>
+                <li>Priority Search Placement</li>
+            </ul>
+            <button onclick="selectMembership('Silver - $59/month')">Select Silver</button>
+        </div>
+        <div class="membership-box">
+            <h3>Gold - $99/month</h3>
+            <p>Maximize your exposure and practice opportunities.</p>
+            <ul>
+                <li>Premium Profile Listing</li>
+                <li>Unlimited Client Inquiries</li>
+                <li>Featured Placement on Homepage</li>
+                <li>Dedicated Account Support</li>
+            </ul>
+            <button onclick="selectMembership('Gold - $99/month')">Select Gold</button>
+        </div>
+    </section>
+
+    <!-- Join Form -->
+    <section class="form-section">
+        <h2>Create Your Account</h2><section class="form-section">
+    <h2>Create Your Account</h2>
+    <form id="membership-form">
+        <input type="hidden" id="selected-plan" name="selected-plan">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Create Password" required>
+        <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+        <div class="terms">
+            <label>
+                <input type="checkbox" required> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </label>
+        </div>
+        <button type="submit">Proceed to Payment</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('membership-form').addEventListener('submit', async function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this);
+        const membershipData = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch('http://localhost:3000/api/membership', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(membershipData),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('Account created successfully! Redirecting to payment...');
+                // Redirect to payment page or perform additional actions
+            } else {
+                alert(`Error: ${result.error}`);
+            }
+        } catch (error) {
+            alert('An error occurred. Please try again.');
+            console.error(error);
+        }
+    });
+</script>
+
+        <form action="#" method="POST">
+            <input type="hidden" id="selected-plan" name="selected-plan">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+            <div class="terms">
+                <label>
+                    <input type="checkbox" required> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                </label>
+            </div>
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Legal Advisors. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

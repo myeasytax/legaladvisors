@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "profile_picture": "profile1.jpg",
+        "business_profile": "Specialist in family and immigration law.",
+        "web_address": "https://johndoelaw.com",
+        "expertise": ["Family Law", "Immigration Law"],
+        "membership_affiliations": ["American Bar Association", "State Bar of California"]
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "profile_picture": "profile2.jpg",
+        "business_profile": "Expert in corporate and intellectual property law.",
+        "web_address": "https://janesmithlaw.com",
+        "expertise": ["Corporate Law", "Intellectual Property"],
+        "membership_affiliations": ["Intellectual Property Lawyers Association"]
+    }
+]
