@@ -1,0 +1,29 @@
+# .gitignore for Legal Advisors Project
+
+# Ignore environment configuration
+.env
+
+# Ignore vendor directory
+/vendor/
+
+# Ignore logs and cache
+/storage/logs/
+/storage/cache/
+
+# Ignore uploaded files
+/public/uploads/
+
+# Ignore compiled assets
+/public/assets/css/styles.css.map
+/public/assets/js/*.map
+
+# Ignore IDE files
+.idea/
+.vscode/
+
+# Ignore node modules
+/node_modules/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
