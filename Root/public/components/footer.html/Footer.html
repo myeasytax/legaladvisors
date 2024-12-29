@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Advisors</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Header Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Navigation Menu */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            outline: none;
+            flex: 1;
+        }
+
+        .search-bar button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #004d99;
+        }
+
+        /* User Profile Dropdown */
+        .profile-menu {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile-menu img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 100;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .profile-menu:hover .dropdown {
+            display: block;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .footer-logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Legal Advisors Logo">
+            <span>Legal Advisors</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search by specialty, location..." />
+            <button type="button">Search</button>
+        </div>
+
+        <!-- User Profile -->
+        <div class="profile-menu">
+            <img src="assets/images/default-profile.png" alt="User Profile">
+            <div class="dropdown">
+                <a href="login.html">Login</a>
+                <a href="#">Dashboard</a>
+                <a href="#">My Profile</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Legal Advisors Logo">
+            <span>Legal Advisors</span>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <img src="assets/images/facebook-icon.png" alt="Facebook">
+            <img src="assets/images/twitter-icon.png" alt="Twitter">
+            <img src="assets/images/linkedin-icon.png" alt="LinkedIn">
+            <img src="assets/images/instagram-icon.png" alt="Instagram">
+        </div>
+    </footer>
+</body>
+</html>
